@@ -9,7 +9,11 @@ Automate::Automate(const std::string &line) {
 }
 
 void Automate::draw() {
-	std::cout << m_line << std::endl;
+	for(auto ch : m_line) {
+		std::cout << getCorrespondingChar(ch);
+	}
+
+	std::cout << std::endl;
 }
 
 void Automate::evolve() {
@@ -55,6 +59,19 @@ char Automate::getEvolution(int sum) {
 			return '1';
 		default:
 			return '0';
+	}
+}
+
+char Automate::getCorrespondingChar(char c) {
+	switch (c) {
+		case '1':
+			return '.';
+		case '2':
+			return '|';
+		case '3':
+			return 'X';
+		default:
+			return ' ';
 	}
 }
 

@@ -35,6 +35,8 @@ class Automate {
 		 */
 		static char getEvolution(int sum);
 
+		static char getCorrespondingChar(char c);
+
 		std::string m_line;
 
 };
